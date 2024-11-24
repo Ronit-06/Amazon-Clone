@@ -52,11 +52,6 @@ const addCartitem = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-
-  const storeitem = await store.findById(id);
-  const cartitem = await cart.create(storeitem);
-
-  res.status(200).json(cartitem);
 };
 
 //delete item from cart
@@ -73,8 +68,8 @@ const deleteCartitem = async (req, res) => {
 
 module.exports = {
   getStoreitems,
-  // getStoreitem,
-  addStoreitem,
+  getStoreitem,
+  // addStoreitem,
   addCartitem,
   deleteCartitem,
 };
