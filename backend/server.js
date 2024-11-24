@@ -22,13 +22,14 @@ app.use('/', storeRoutes)
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => {
-    console.log("connected to database");
+    console.log("connected to store database");
 
     // listen to port
     app.listen(process.env.PORT, () => {
-      console.log("listening for requests on port", process.env.PORT);
+      console.log("listening for requests on port for store", process.env.PORT);
     });
   })
   .catch((err) => {
     console.log(err);
   });
+

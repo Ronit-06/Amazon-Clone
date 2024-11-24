@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const store = require("../model/storeModel");
-const {getStoreitems, getStoreitem, addStoreitem, deleteStoreitem} = require("../controller/routesContoller")
+const {getStoreitems, getStoreitem, addCartitem, deleteCartitem, addStoreitem} = require("../controller/routesContoller")
 
 //get all store items
 router.get("/", getStoreitems);
@@ -10,9 +10,12 @@ router.get("/", getStoreitems);
 router.get("/:id", getStoreitem);
 
 //add store item
-router.post("/:id", addStoreitem);
+// router.post("/", addStoreitem)
 
-//delete store item
-router.delete("/:id", deleteStoreitem);
+//add store item to cart
+router.post("/:id", addCartitem);
+
+//delete store item from cart
+router.delete("/:id", deleteCartitem);
 
 module.exports = router

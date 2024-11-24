@@ -18,15 +18,4 @@ const storeSchema = new Schema({
   
 },)
 
-const cartSchema = new Schema({
-  userId: { type: String, required: true },
-  items: [
-    {
-      productId: { type: mongoose.Schema.Types.ObjectId, ref: "Store", required: true },
-      quantity: { type: Number, default: 1 },
-    },
-  ],
-});
-
-module.exports = mongoose.model('store', storeSchema)
-module.exports = mongoose.model('cart', cartSchema)
+module.exports = mongoose.model('products', storeSchema)
