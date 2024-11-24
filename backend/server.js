@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const storeRoutes = require("./routes/store")
+const storeRoutes = require("./routes/store");
 
 // express app
 const app = express();
@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use('/', storeRoutes)
+app.use("/", storeRoutes);
 
 // connect to db
 mongoose
@@ -32,4 +32,3 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
