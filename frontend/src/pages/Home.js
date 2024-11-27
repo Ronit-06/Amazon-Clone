@@ -20,7 +20,10 @@ const Home = () => {
     <div className="home">
       <div className="Products">
         {products && products.map((product)=>(
-          <p key={product._id}>{product.title}, {product.price}</p>
+          <div key={product._id} className="product-item">
+            <img src={`data:image/png;base64,${product.img}`} alt={product.title} className="product-image" />
+            <p>{product.title}, {product.price}</p>
+          </div>
         ))}
       </div>
     </div>
