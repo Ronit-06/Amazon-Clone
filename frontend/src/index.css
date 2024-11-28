@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+Header{
+background-color: #181c27;
+margin: 0px;
+padding: 0px;
+width: 100;
+}
+
+.headerimage{
+    width: 200px;
+    height: 70px;
+}

@@ -6,7 +6,7 @@ const Navbar = () => {
     <header>
       <div className="Header">
         <Link to="/">
-          <h1>Amazon</h1>
+          <img src="/assets/amazon-logo-s3f.png" alt="pic" class = "headerimage"></img>
         </Link>
       </div>
     </header>
