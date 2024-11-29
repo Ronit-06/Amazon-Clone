@@ -22,7 +22,9 @@ const Home = () => {
         {products && products.map((product)=>(
           <div key={product._id} className="product-item">
             <img src={`data:image/png;base64,${product.img}`} alt={product.title} className="product-image" />
-            <p>{product.title}, {product.price}</p>
+            <p className="product-title">{product.title}</p>
+            <p className="product-price">AED {product.price}</p>
+            <button className="add-to-cart-btn">Add to Cart</button>
           </div>
         ))}
       </div>

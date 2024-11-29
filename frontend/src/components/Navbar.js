@@ -11,9 +11,9 @@ const Navbar = () => {
             class="headerimage"
           ></img>
         </Link>
-    
+
         <div className="search-bar">
-        <select className="category-dropdown">
+          <select className="category-dropdown">
             <option value="all">All</option>
             <option value="electronics">Electronics</option>
             <option value="fashion">Fashion</option>
