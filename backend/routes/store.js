@@ -5,7 +5,7 @@ const {
   getStoreitems,
   getStoreitem,
   addCartitem,
-  deleteCartitem
+  deleteCartitem,
   // addStoreitem
 } = require("../controller/routesContoller");
 
