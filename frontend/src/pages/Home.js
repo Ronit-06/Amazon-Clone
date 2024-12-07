@@ -35,7 +35,6 @@ const Home = () => {
                 />  
                 <p className="product-title">{product.title}</p>
                 <p className="product-price">AED {product.price}</p>
-                {/* <button className="add-to-cart-btn">Add to Cart</button> */}
               </div>
             </Link>
           ))}
