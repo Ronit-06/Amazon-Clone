@@ -32,9 +32,9 @@ const CartProductPage = () => {
   };
 
   return (
-    <div className="CartProductpage">
+    <div className="cart-Product-page">
       {cart && (
-        <div key={cart._id} className="cartpage-item">
+        <div key={cart._id} className="cart-page-item">
           <img
             src={`data:image/png;base64,${cart.img}`}
             alt={cart.title}
