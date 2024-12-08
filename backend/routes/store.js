@@ -6,11 +6,19 @@ const {
   getStoreitem,
   addCartitem,
   deleteCartitem,
+  getCartitems,
+  getCartitem
   // addStoreitem
 } = require("../controller/routesContoller");
 
 //get all store items
 router.get("/", getStoreitems);
+
+//get cart items
+router.get("/cart", getCartitems);
+
+//get one cart item
+router.get("/cart/:id", getCartitem);
 
 //get one store item
 router.get("/:id", getStoreitem);

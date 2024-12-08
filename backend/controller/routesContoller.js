@@ -55,6 +55,27 @@ const addCartitem = async (req, res) => {
   }
 };
 
+//get cart items
+const getCartitems = async (req, res) => {
+  try {
+    const cartItem = await cart.find({}).sort({ createdAt: -1 });
+    res.status(200).json(cartItem);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const getCartitem = async (req,res) =>{
+  const { id } = req.params;
+
+  try {
+    const cartItem = await cart.findById(id);
+    res.status(200).json(cartItem);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
+
 //delete item from cart
 const deleteCartitem = async (req, res) => {
   const { id } = req.params;
@@ -73,4 +94,6 @@ module.exports = {
   // addStoreitem,
   addCartitem,
   deleteCartitem,
+  getCartitem,
+  getCartitems
 };

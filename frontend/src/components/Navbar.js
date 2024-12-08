@@ -30,6 +30,12 @@ const Navbar = () => {
             </span>
           </button>
         </div>
+
+        <div className="cart-button">
+          <Link to="/cart">
+            <img src="/assets/cart_logo.jpeg" alt="pic" class="cartimage"></img>
+          </Link>
+        </div>
       </div>
     </header>
   );
