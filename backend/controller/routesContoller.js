@@ -47,6 +47,7 @@ const addCartitem = async (req, res) => {
       title: storeItem.title,
       price: storeItem.price,
       productType: storeItem.productType,
+      img: storeItem.img,
     });
     res.status(200).json(cartitem);
   } catch (error) {

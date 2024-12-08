@@ -182,12 +182,12 @@ html, body {
 }
 
 .add-to-cart-button:hover {
-  background-color: #45a049;
+  background-color: #e59400;
   transform: scale(1.05);
 }
 
 .add-to-cart-button:active {
-  background-color: #3e8e41;
+  background-color: #e59400;
   transform: scale(1);
 }
 

@@ -18,22 +18,39 @@ const ProductPage = () => {
     fetchProduct();
   }, [id]);
 
+  const handleAddtoCart = async (id) => {
+    const response = await fetch(`http://localhost:4000/${id}`);
+    const json = await response.json();
+
+    if (response.ok) {
+      const addtoCart = await fetch(`http://localhost:4000/${id}`, {
+        method: "POST",
+        body: json,
+      });
+      console.log("Added to Cart");
+    }
+  };
+
   return (
     <div className="Productpage">
-      {product &&
-        (
-          <div key={product._id} className="productpage-item">
-            <img
-              src={`data:image/png;base64,${product.img}`}
-              alt={product.title}
-              className="product-page-image"
-            />
-            <h1 className="product-page-title">{product.title}</h1>
-            <p className="product-page-price">AED {product.price}</p>
-            <p className="product-page-description">{product.description}</p>
-            <button className="add-to-cart-button">Add to Cart</button>
-          </div>
-        )}
+      {product && (
+        <div key={product._id} className="productpage-item">
+          <img
+            src={`data:image/png;base64,${product.img}`}
+            alt={product.title}
+            className="product-page-image"
+          />
+          <h1 className="product-page-title">{product.title}</h1>
+          <p className="product-page-price">AED {product.price}</p>
+          <p className="product-page-description">{product.description}</p>
+          <button
+            className="add-to-cart-button"
+            onClick={() => handleAddtoCart(id)}
+          >
+            Add to Cart
+          </button>
+        </div>
+      )}
     </div>
   );
 };

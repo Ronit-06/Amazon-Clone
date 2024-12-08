@@ -32,7 +32,7 @@ const Home = () => {
                   src={`data:image/png;base64,${product.img}`}
                   alt={product.title}
                   className="product-image"
-                />  
+                />
                 <p className="product-title">{product.title}</p>
                 <p className="product-price">AED {product.price}</p>
               </div>
