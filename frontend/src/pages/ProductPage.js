@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 const ProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -28,6 +29,10 @@ const ProductPage = () => {
         body: json,
       });
       console.log("Added to Cart");
+
+      setMessage("Product added to cart!");
+
+      setTimeout(() => setMessage(""), 3000);
     }
   };
 
@@ -49,6 +54,11 @@ const ProductPage = () => {
           >
             Add to Cart
           </button>
+          {message && (
+            <div className="popup-message">
+              <p>Product added to cart!</p>
+            </div>
+          )}
         </div>
       )}
     </div>
