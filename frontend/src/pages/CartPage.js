@@ -3,31 +3,43 @@ import { Link } from "react-router-dom";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
-//   const [total, setTotal] = useState(0);
+  //   const [total, setTotal] = useState(0);
 
-  useEffect(() => {
-    const fetchCartItems = async () => {
-      const response = await fetch("http://localhost:4000/cart");
-      const data = await response.json();
+    useEffect(() => {
+      const fetchCartItems = async () => {
+        const response = await fetch("http://localhost:4000/cart");
+        const data = await response.json();
+
+        if (response.ok) {
+          setCartItems(data);
+        }
+      };
+      fetchCartItems();
+    }, []);
+
+    const deleteCartitem = async (id) => {
+      const response = await fetch(`http://localhost:4000/${id}`);
 
       if (response.ok) {
-        setCartItems(data);
-      }
-    };
-    fetchCartItems();
-  }, []);
+        const deleteitem = await fetch(`http://localhost:4000/${id}`, {
+          method: "DELETE"
+        });
+        console.log("Deleted item");
+        window.location.reload();
+        };
+    }
 
-    return(
+  return (
     <div className="cartpage">
       <div className="cartproducts">
         {cartItems &&
           cartItems.map((cart) => (
-            <Link
-              to={`/cart/${cart._id}`}
-              key={cart._id}
-              className="cart-link"
-            >
-              <div key={cart._id} className="cart-item">
+            <div key={cart._id} className="cart-item">
+              <Link
+                to={`/cart/${cart._id}`}
+                key={cart._id}
+                className="cart-link"
+              >
                 <img
                   src={`data:image/png;base64,${cart.img}`}
                   alt={cart.title}
@@ -35,15 +47,16 @@ const CartPage = () => {
                 />
                 <p className="cart-title">{cart.title}</p>
                 <p className="cart-price">AED {cart.price}</p>
-              </div>
-            </Link>
+              </Link>
+
+              <button className="cart-delete" onClick={() => deleteCartitem(cart._id)}>
+                Delete
+              </button>
+            </div>
           ))}
       </div>
     </div>
-    )
-
-}
-
-
+  );
+};
 
 export default CartPage;

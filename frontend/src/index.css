@@ -314,3 +314,24 @@ html, body {
 .cart-link:hover .cart-title {
   color: #007bff; /* Highlight title on hover */
 }
+
+.cart-delete {
+  background-color: #e63946; 
+  color: #ffffff; 
+  border: none;
+  padding: 5px 10px; 
+  border-radius: 5px; 
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 3ms ease, transform 0.2s ease;
+}
+
+.cart-delete:hover {
+  background-color: #d62839; 
+  transform: scale(1.05); 
+}
+
+.cart-delete:active {
+  background-color: #c5283b; 
+  transform: scale(0.95);
+}
