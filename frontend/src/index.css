@@ -354,3 +354,25 @@ html, body {
 .popup p {
   margin: 0;
 }
+
+.loading-message {
+  font-size: 1.2em;
+  color: #555;
+  padding: 20px;
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.no-items {
+  font-size: 1.5em;
+  color: #888;
+  padding: 20px;
+  background-color: #fff2e8;
+  border: 1px solid #ffbb96;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: inline-block;
+}
