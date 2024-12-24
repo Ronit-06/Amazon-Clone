@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
       const fetchCartItems = async () => {
@@ -12,6 +13,7 @@ const CartPage = () => {
         if (response.ok) {
           setCartItems(data);
         }
+        setIsLoading(false);
       };
       fetchCartItems();
     }, []);
@@ -26,6 +28,22 @@ const CartPage = () => {
         console.log("Deleted item");
         window.location.reload();
         };
+    }
+
+    if (isLoading) {
+      return (
+        <div className="cartpage">
+          <p className="loading-message">Loading your cart...</p>
+        </div>
+      );
+    }
+  
+    if (cartItems.length === 0) {
+      return (
+        <div className="cartpage">
+          <p className="no-items">Your cart is empty. Start shopping!</p>
+        </div>
+      );
     }
 
   return (
@@ -53,6 +71,7 @@ const CartPage = () => {
               </button>
             </div>
           ))}
+        
       </div>
     </div>
   );
