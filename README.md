@@ -13,7 +13,7 @@ I used this project as a sandbox to learn how to use these technologies together
   - There is no payment option for the items.
   - There is no admin page for the items, Products are directly added to the database or through a backend route.
 
+Below is a video demo of how the website looks and functions:
 
-
-https://github.com/user-attachments/assets/1ee94bf7-0b49-4903-84ee-5b5fee64ce81
+https://github.com/user-attachments/assets/6388a53a-7450-47f1-8788-d4c5d1aae900
 
