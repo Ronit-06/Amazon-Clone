@@ -9,5 +9,4 @@ It includes:
 I used this project as a sandbox to learn how to use these technologies together, so there are a few things that might be a bit different:
 
   - Images are stored in the database as Base64 strings since cloud storage is pricey so the database storage is slightly inefficent.
-  - One of the commits has extra code that doesn’t do anything right now but might be useful in the future.
   - The search bar is just a placeholder and doesn’t work.
