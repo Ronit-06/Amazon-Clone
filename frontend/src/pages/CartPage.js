@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
-  //   const [total, setTotal] = useState(0);
 
     useEffect(() => {
       const fetchCartItems = async () => {

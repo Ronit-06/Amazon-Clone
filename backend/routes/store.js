@@ -8,7 +8,6 @@ const {
   deleteCartitem,
   getCartitems,
   getCartitem
-  // addStoreitem
 } = require("../controller/routesContoller");
 
 //get all store items
@@ -22,9 +21,6 @@ router.get("/cart/:id", getCartitem);
 
 //get one store item
 router.get("/:id", getStoreitem);
-
-//add store item
-// router.post("/", addStoreitem)
 
 //add store item to cart
 router.post("/:id", addCartitem);

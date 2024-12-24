@@ -26,18 +26,7 @@ const getStoreitem = async (req, res) => {
   }
 };
 
-//add item to the store
-
-// const addStoreitem = async (req, res) => {
-//   try {
-//     const storeitem = await store.create(req.body);
-//     res.status(200).json(storeitem);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// };
-
-//add item to cart from store
+//add a item to the cart
 const addCartitem = async (req, res) => {
   const { id } = req.params;
 
@@ -91,7 +80,6 @@ const deleteCartitem = async (req, res) => {
 module.exports = {
   getStoreitems,
   getStoreitem,
-  // addStoreitem,
   addCartitem,
   deleteCartitem,
   getCartitem,
