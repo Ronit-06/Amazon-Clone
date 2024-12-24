@@ -10,3 +10,6 @@ I used this project as a sandbox to learn how to use these technologies together
 
   - Images are stored in the database as Base64 strings since cloud storage is pricey so the database storage is slightly inefficent.
   - The search bar is just a placeholder and doesn’t work.
+  - There is no payment option for the items.
+  - There is no admin page for the items, Products are directly added to the database or through a backend route.
+
